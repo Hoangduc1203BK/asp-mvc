@@ -9,8 +9,8 @@ namespace mvc_project.Model
 {
     public class Course
     {
-        [Key]
-        public int Id { get; set; }
+        [Required(ErrorMessage = "Id is required")]
+        public string Id { get; set; }
 
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }

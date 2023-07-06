@@ -20,7 +20,7 @@ namespace mvc_project.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public IActionResult GetCoure(int id)
+        public IActionResult GetCoure(string id)
         {
             Course course = courses.Find(el => el.Id == id);
 
@@ -29,16 +29,16 @@ namespace mvc_project.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateCoures(CreateCoureDto data)
+        public IActionResult CreateCoures(CreateCourseDto data)
         {
             Console.WriteLine(data);
 
             Course course = new Course{
-                Id = int.Parse(Guid.NewGuid().ToString()),
-                Name = "abc",
-                Description = "def",
-                Price = 10,
-                CategoryId = 1,
+                Id = Guid.NewGuid().ToString(),
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                CategoryId = data.CategoryId,
             };
             courses.Add(course);
 

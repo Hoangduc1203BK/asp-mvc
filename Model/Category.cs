@@ -18,8 +18,4 @@ namespace mvc_project.Model
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
     }
-
-    public class CreateCoureDto {
-
-    }
 }
