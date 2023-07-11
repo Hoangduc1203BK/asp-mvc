@@ -24,6 +24,10 @@ namespace mvc_project.Controllers
         {
             Course course = courses.Find(el => el.Id == id);
 
+            if(course==null) {
+                return NotFound("Course not found"+id);
+            }
+
             return Ok(course);
         }
 
